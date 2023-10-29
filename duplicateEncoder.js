@@ -3,7 +3,7 @@
 // or ")" if that character appears more than once in the original string.
 // Ignore capitalization when determining if a character is a duplicate.
 
-// O(2n)
+// time complexity: O(2n)
 function duplicateEncode(word){
   word = word.toLowerCase();
   let str = "";
@@ -18,7 +18,7 @@ function duplicateEncode(word){
 }
 
 // v2, does not work onstrings with non-alphanumeric symbols
-// might be bad practice as it modifies word as it iterates it
+// may be bad practice as it modifies word as it iterates it
 function duplicateEncode(word){
   word = word.toLowerCase();
   for (let letter of word) {
@@ -30,7 +30,7 @@ function duplicateEncode(word){
   return word;
 }
 
-//v3, its O(n^2)
+//v3, its time complexity is O(n^2)
 function isUniqueLetter(word, letter) {
   return word.lastIndexOf(letter) == word.indexOf(letter);
 }
