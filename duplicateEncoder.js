@@ -4,13 +4,18 @@
 // Ignore capitalization when determining if a character is a duplicate.
 
 // time complexity: O(2n)
+function countLetters(word) {
+  let seen = {};
+  for (let letter of word) {
+    seen[letter] = (seen.hasOwnProperty(letter)) ? seen[letter] + 1 : 1;
+  }
+  return seen;
+}
+
 function duplicateEncode(word){
   word = word.toLowerCase();
+  const seenLetters = countLetters(word);
   let str = "";
-  const seenLetters = {};
-  for (let letter of word) {
-    seenLetters[letter] = (seenLetters.hasOwnProperty(letter)) ? seenLetters[letter] + 1 : 1;
-  }
   for (let letter of word) {
     str += (seenLetters[letter] === 1) ? "(" : ")";
   }
