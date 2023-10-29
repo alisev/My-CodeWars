@@ -3,7 +3,7 @@
 // or ")" if that character appears more than once in the original string.
 // Ignore capitalization when determining if a character is a duplicate.
 
-// O(2n), 826 ms
+// O(2n)
 function duplicateEncode(word){
   word = word.toLowerCase();
   let str = "";
@@ -28,4 +28,18 @@ function duplicateEncode(word){
     word = (counter > 1) ? word.replace(regex, ')') : word.replace(regex, '(');
   }
   return word;
+}
+
+//v3, its O(n^2)
+function isUniqueLetter(word, letter) {
+  return word.lastIndexOf(letter) == word.indexOf(letter);
+}
+
+function duplicateEncode(word){
+  let unique='';
+  word = word.toLowerCase();
+  for(let i = 0; i < word.length; i++){
+    unique += isUniqueLetter(word, word[i]) ? "(" : ")";
+  }
+  return unique;
 }
