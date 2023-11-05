@@ -9,10 +9,10 @@
 // ""                                        =>  false
 
 function generateHashtag (str) {
-  let hashtag = "#" + str.split(' ').reduce(
+  let hashtag = str.split(' ').reduce(
     (res, word) =>
     res + word.charAt(0).toUpperCase() + word.slice(1),
-    ""
+    "#"
   );
   return hashtag.length <= 140 && hashtag.length > 1 ? hashtag : false;
 }
