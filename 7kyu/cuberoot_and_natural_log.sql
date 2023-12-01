@@ -1,0 +1,8 @@
+-- Return a table with two columns (cuberoot, logarithm) where
+-- the values in cuberoot are the cube root of those provided in number1
+-- and the values in logarithm are changed to the natural logarithm of those in number2.
+
+SELECT
+  CBRT(number1) AS cuberoot,
+  LN(number2) AS logarithm
+FROM decimals
